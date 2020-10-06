@@ -1,0 +1,73 @@
+ubuntu@ip-10-2-11-118:~$  mysql -h database-rereplica.cphr9awequzx.us-east-2.rds.amazonaws.com -P 3306 -u admin -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 6
+Server version: 5.7.22-log Source distribution
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use udacity;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> INSERT INTO recipes 
+    ->     (recipe_id, recipe_name) 
+    -> VALUES (4,"Salad")
+    -> 
+    -> 
+    -> 
+[1]+  Stopped                 mysql -h database-rereplica.cphr9awequzx.us-east-2.rds.amazonaws.com -P 3306 -u admin -p
+ubuntu@ip-10-2-11-118:~$ 
+ubuntu@ip-10-2-11-118:~$ 
+ubuntu@ip-10-2-11-118:~$ mysql -h database-rereplica.cphr9awequzx.us-east-2.rds.amazonaws.com -P 3306 -u admin -p
+Enter password: 
+ERROR 1045 (28000): Access denied for user 'admin'@'10.2.11.118' (using password: NO)
+ubuntu@ip-10-2-11-118:~$ mysql -h database-rereplica.cphr9awequzx.us-east-2.rds.amazonaws.com -P 3306 -u admin -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 5.7.22-log Source distribution
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use udacity;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> INSERT INTO recipes 
+    ->     ->     (recipe_id, recipe_name) 
+    ->     -> VALUES
+    -> (4,"salad");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '->     (recipe_id, recipe_name) 
+    -> VALUES
+(4,"salad")' at line 2
+mysql> INSERT INTO recipes 
+    ->     (recipe_id, recipe_name) 
+    -> VALUES 
+    -> (4,"fry salad");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from recipes;
++-----------+----------------+
+| recipe_id | recipe_name    |
++-----------+----------------+
+|         4 | fry salad      |
+|         3 | Grilled Cheese |
+|         1 | Tacos          |
+|         2 | Tomato Soup    |
++-----------+----------------+
+4 rows in set (0.00 sec)

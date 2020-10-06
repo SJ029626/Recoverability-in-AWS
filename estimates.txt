@@ -1,0 +1,16 @@
+```
+1.Minimum RTO for a single AZ outage
+For the minimum RTO we will have a monitoring team 24/7 available or I can say support team on the datacenters. The responsible person will get the remote access and will try to fix it as well as we will have a documented recovery procedure which should be immediately followed as soon as there is a outage.  Highly automated machine conversion and orchestration enable Recovery Time Objectives (RTOs) of minutes. Also we can use enable AWS Config to track where we may be creating drift using Config rules, which can create systems that enforce the disaster recovery strategies and create alerts if they detect drift. Also, we can use create replica for such times to prevent us from such thing and at the time of RPO or RTO we can promote that replica so that our service doesn't get affected much.
+
+
+2. Minimum RTO for a single region outage
+For the minimum RTO in a single region we will follow up the same thing. We will have a monitoring team 24/7 available or I can say support team on the datacenters. The responsible person will get the remote access and will try to fix it as well as we will have a documented recovery procedure which should be immediately followed as soon as there is a outage. Highly automated machine conversion and orchestration enable Recovery Time Objectives (RTOs) of about 2 hours. Also we can use enable AWS Config to track where we may be creating drift using Config rules, which can create systems that enforce the disaster recovery strategies and create alerts if they detect drift. Also, we can use create replica for such times to prevent us from such thing and at the time of RPO or RTO we can promote that replica so that our service doesn't get affected much.
+
+
+3.Minimum RPO for a single AZ outage
+For minimum RPO in a single AZ outage we will have enabled automatic backups which will recover the database as soon as something happens and will restore the database at a prior point of time. So after determining RPO we can use CloudEndure which uses Continuous Data Protection, enabling sub-second Recovery Point Objectives (RPOs) in AWS which is a AWS service. Also, we can use create replica for such times to prevent us from such thing and at the time of RPO or RTO we can promote that replica so that our service doesn't get affected much.
+
+4.Minimum RPO for a single region outage
+For minimum RPO in a single region outage we will have enabled automatic backups but we will have also created its replica in another region so as soon as it goes out the another region instance will be up and will be acting like it. So after determining RPO we can use CloudEndure which uses Continuous Data Protection, enabling sub-second Recovery Point Objectives (RPOs) in AWS which is a AWS service. Also, we can use create replica for such times to prevent us from such thing and at the time of RPO or RTO we can promote that replica so that our service doesn't get affected much.
+
+```
